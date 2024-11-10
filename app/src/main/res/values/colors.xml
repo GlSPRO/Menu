@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#b3cee3</color>
+    <color name="perpel">#e3d9b3</color>
+    <color name="per">#e0cce3</color>
+
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/perpel"
+    tools:context=".FirstFragment">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvFact"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Погрузитесь в мир удивительных фактов! Нажмите и удерживайте здесь, чтобы открыть завесу тайны о SOULSHINE и узнать, как любовь к природе вдохновляет на создание уникальных ювелирных украшений."
+            android:textSize="36sp"
+            android:fontFamily="serif"
+            android:textColor="@android:color/black"
+            android:padding="16dp"
+            />
+    </LinearLayout>
+
+</FrameLayout>

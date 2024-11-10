@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SOULSHINE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">buy</string>
+    <string name="open_drawer">Открыть меню</string>
+    <string name="close_drawer">Закрыть меню</string>
+</resources>
