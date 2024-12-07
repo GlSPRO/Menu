@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_settings"
-        android:title="Настройки"/>
+        android:title="Параметры"/>
 
     <item android:id="@+id/about"
-        android:title="Дополнительно">
+        android:title="Вспомогательно">
         <menu>
             <group android:id="@+id/fragments">
                 <item android:id="@+id/firstFrag"
-                    android:title="Факты"/>
+                    android:title="Info"/>
                 <item android:id="@+id/twoFrag"
-                    android:title="Кликер"/>
+                    android:title="Clic"/>
             </group>
         </menu>
     </item>

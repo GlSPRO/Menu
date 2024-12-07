@@ -11,11 +11,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
-    BottomNavigationView bottomNavigationView;
-    DrawerLayout drawerLayout;
-    ActionBarDrawerToggle toggle;
+    // Элементы интерфейса для навигации
+    BottomNavigationView rollsRoyceBottomNav; // Нижняя навигация для Rolls Royce
+    DrawerLayout rollsRoyceDrawer; // Боковое меню для Rolls Royce
+    ActionBarDrawerToggle drawerToggle; // Переключатель бокового меню
 
-    public void setFragment(Fragment fragment) {
+    // Метод для замены текущего фрагмента
+    public void displayFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout, fragment, null).commit();
     }
 
@@ -24,41 +26,46 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        drawerLayout = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.navigation_view);
+        // Инициализация элементов интерфейса
+        rollsRoyceDrawer = findViewById(R.id.drawer_layout);
+        NavigationView rollsRoyceNavigation = findViewById(R.id.navigation_view);
 
-        toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open_drawer, R.string.close_drawer);
-        drawerLayout.addDrawerListener(toggle);
+        // Настройка переключателя для бокового меню
+        drawerToggle = new ActionBarDrawerToggle(this, rollsRoyceDrawer, R.string.open_drawer, R.string.close_drawer);
+        rollsRoyceDrawer.addDrawerListener(drawerToggle);
 
+        // Отображение кнопки для открытия бокового меню
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        drawerToggle.syncState();
 
-        toggle.syncState();
+        // Инициализация нижней навигации и установка начального фрагмента
+        rollsRoyceBottomNav = findViewById(R.id.bottom_nav);
+        displayFragment(new FirstFragment());
 
-        bottomNavigationView = findViewById(R.id.bottom_nav);
-        setFragment(new FirstFragment());
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+        // Обработка выбора элемента в нижней навигации
+        rollsRoyceBottomNav.setOnNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.first_item) {
-                setFragment(new FirstFragment());
+                displayFragment(new FirstFragment());
                 return true;
             } else if (id == R.id.second_item) {
-                setFragment(new SecondFragment());
+                displayFragment(new SecondFragment());
                 return true;
             }
             return false;
         });
 
-        navigationView.setNavigationItemSelectedListener(item -> {
+        // Обработка выбора элемента в боковом меню
+        rollsRoyceNavigation.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.nav_item1) {
-                setFragment(new FirstFragment());
+                displayFragment(new FirstFragment());
             } else if (id == R.id.nav_item2) {
-                setFragment(new SecondFragment());
+                displayFragment(new SecondFragment());
             } else {
                 return false; // Если ID не совпадает, возвращаем false
             }
-            drawerLayout.closeDrawers(); // Закрываем навигационное меню после выбора
+            rollsRoyceDrawer.closeDrawers(); // Закрываем навигационное меню после выбора
             return true; // Возвращаем true, если обработали событие
         });
     }
@@ -71,20 +78,18 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (toggle.onOptionsItemSelected(item)) {
-            return true;
+        if (drawerToggle.onOptionsItemSelected(item)) {
+            return true; // Обработка нажатия на переключатель бокового меню
         }
-
         int id = item.getItemId();
-
         if (id == R.id.action_settings) {
-            Toast.makeText(this, "Настройки выбраны", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Вы выбрали параметры", Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.firstFrag) {
-            setFragment(new FirstFragment());
+            displayFragment(new FirstFragment());
             return true;
         } else if (id == R.id.twoFrag) {
-            setFragment(new SecondFragment());
+            displayFragment(new SecondFragment());
             return true;
         } else {
             return super.onOptionsItemSelected(item);

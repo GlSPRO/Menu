@@ -3,24 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/perpel"
+    android:background="@color/black"
     tools:context=".FirstFragment">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/tvFact"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Погрузитесь в мир удивительных фактов! Нажмите и удерживайте здесь, чтобы открыть завесу тайны о SOULSHINE и узнать, как любовь к природе вдохновляет на создание уникальных ювелирных украшений."
-            android:textSize="36sp"
-            android:fontFamily="serif"
-            android:textColor="@android:color/black"
-            android:padding="16dp"
-            />
+            android:layout_height="wrap_content"
+            android:text="Погрузитесь в мир Rolls Royce! Узнайте, как каждая машина создаётся с любовью к деталям и вдохновением от природы."
+            android:textSize="24sp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@android:color/white"
+            android:padding="16dp"/>
+
     </LinearLayout>
 
 </FrameLayout>

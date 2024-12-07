@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/increment" android:title="Кликнуть"/>
-    <item android:id="@+id/reset" android:title="Сбросить клики"/>
+    <item android:id="@+id/increment" android:title="Clic"/>
+    <item android:id="@+id/reset" android:title="Clear"/>
 </menu>

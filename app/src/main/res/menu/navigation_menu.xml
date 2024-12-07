@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_item1"
-        android:title="Интересные факты о SOULSHINE" />
+        android:title="Info Rolls Royce" />
     <item
         android:id="@+id/nav_item2"
-        android:title="Кликер от SOULSHINE" />
+        android:title="Clic Rolls Royce" />
 </menu>

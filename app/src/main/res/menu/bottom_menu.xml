@@ -4,10 +4,9 @@
     <item
         android:id="@+id/first_item"
         android:icon="@drawable/ic_facts"
-        android:title="ФАКТЫ"/>
+        android:title="INFO"/>
     <item
         android:id="@+id/second_item"
         android:icon="@drawable/ic_clicker"
-        android:title="КЛИКЕР"/>
-
+        android:title="CLIC"/>
 </menu>
